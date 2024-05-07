@@ -143,7 +143,7 @@ CREATE TABLE usuarios (
     data_nascimento DATE
 );
 ````
-## Exemplo de como criar inserir dados na tabela 'usuarios'
+## Exemplo de como inserir dados na tabela 'usuarios'
 ```
 INSERT INTO usuarios (nome, email, endereco, data_nascimento)VALUE
     ('João Silva', 'joao@example.com', 'Rua Principal, 123', '1990-05-15'),
