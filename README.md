@@ -169,3 +169,80 @@ INSERT INTO usuarios (nome, email, endereco, data_nascimento)VALUE
 | IS NULL    | Testa se um valor é nulo                                     |
 | IS NOT NULL| Testa se um valor não é nulo                                 |
 
+## Alguns exemplos Práticos de Operadores em SQL
+### Operador <> ou !=
+
+- Descrição: Verifica se dois valores são diferentes.
+```
+SELECT * FROM produtos WHERE categoria <> 'Eletrônicos';
+```
+### Operador >
+
+- Descrição: Verifica se o valor da esquerda é maior que o da direita
+```
+SELECT * FROM funcionarios WHERE salario > 3000;
+```
+### Operador <
+
+- Descrição: Verifica se o valor da esquerda é menor que o da direita.
+```
+SELECT * FROM pedidos WHERE valor_total < 100;
+```
+### Operador >=
+- Descrição: Verifica se o valor da esquerda é maior ou igual ao da direita.
+```
+SELECT * FROM alunos WHERE idade >= 18;
+```
+### Operador AND
+- Descrição: Retorna verdadeiro se ambas as condições forem verdadeiras.
+```
+SELECT * FROM clientes WHERE cidade = 'São Paulo' AND status = 'ativo';
+```
+### Operador OR
+- Descrição: Retorna verdadeiro se pelo menos uma das condições for verdadeira.
+```
+SELECT * FROM funcionarios WHERE cargo = 'Gerente' OR cargo = 'Diretor';
+```
+### Operador NOT
+- Descrição: Inverte o resultado de uma condição.
+```
+SELECT * FROM produtos WHERE NOT categoria = 'Eletrônicos';
+```
+### Operador XOR
+- Descrição: Retorna verdadeiro se uma e apenas uma das condições for verdadeira.
+```
+SELECT * FROM alunos WHERE idade >= 18 XOR pais = 'Brasil';
+```
+### Operador IN
+- Descrição: Determina se um valor está dentro de um conjunto de valores.
+```
+SELECT * FROM produtos WHERE categoria IN ('Eletrônicos', 'Roupas', 'Livros');
+```
+### Operador NOT IN
+- Descrição: Determina se um valor não está dentro de um conjunto de valores.
+```
+SELECT * FROM clientes WHERE cidade NOT IN ('São Paulo', 'Rio de Janeiro');
+```
+### Operador BETWEEN
+- Descrição: Determina se um valor está dentro de um intervalo.
+```
+SELECT * FROM pedidos WHERE valor_total BETWEEN 100 AND 500;
+```
+### Operador NOT BETWEEN
+- Descrição: Determina se um valor não está dentro de um intervalo.
+```
+SELECT * FROM funcionarios WHERE salario NOT BETWEEN 2000 AND 5000;
+```
+### Operador EXISTS
+- Descrição: Verifica a existência de qualquer registro na subconsulta.
+```
+SELECT * FROM clientes WHERE EXISTS (SELECT * FROM pedidos WHERE pedidos.cliente_id = clientes.id);
+```
+### Operador NOT EXISTS
+- Descrição: Verifica a não existência de qualquer registro na subconsulta.
+```
+SELECT * FROM alunos WHERE NOT EXISTS (SELECT * FROM notas WHERE notas.aluno_id = alunos.id);
+```
+# Documentação
+[Documentação do MySQL](https://dev.mysql.com/)
+
